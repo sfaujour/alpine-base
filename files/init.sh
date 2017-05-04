@@ -9,4 +9,7 @@ echo "Starting with UID : $USER_ID"
 adduser -s /bin/bash -u $USER_ID -D user
 export HOME=/home/user
 
+gosu root cp /root/.bashrc /home/user/.bashrc
+
 exec gosu user "$@"
+
